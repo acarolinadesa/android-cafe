@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -12,7 +15,6 @@ import com.example.cafe.NewActivity;
 import com.example.cafe.R;
 
 public class HomemadeActivity extends AppCompatActivity {
-    Button mButtonPlus;
 
 //    ListView listview;
 //    DatabaseHelper databaseHelper;
@@ -37,17 +39,16 @@ public class HomemadeActivity extends AppCompatActivity {
 //
 //        TextView textView = findViewById(R.id.textView);
 //        textView.setText(message);
+    }
 
-        ImageButton mButtonPlus = (ImageButton) findViewById(R.id.imageButtonPlus);
-        mButtonPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent registerIntent = new Intent(HomemadeActivity.this, NewActivity.class);
-                startActivity(registerIntent);
-            }
-        });
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater i =  getMenuInflater();
+        i.inflate(R.menu.homemade_main, menu);
+        return true;
+    }
 
-
-
+    public void register(MenuItem menu){
+        Intent newItem = new Intent(this, NewActivity.class);
+        startActivity(newItem);
     }
 }

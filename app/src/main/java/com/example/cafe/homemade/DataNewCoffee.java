@@ -5,18 +5,22 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cafe.DatabaseHelper;
+import com.example.cafe.NewCoffee;
 
-public class DataHomemade {
+public class DataNewCoffee {
     private DatabaseHelper conexao;
     private SQLiteDatabase banco;
 
-    public DataHomemade(Context context){
+    public DataNewCoffee(Context context){
         conexao = new DatabaseHelper(context);
         banco = conexao.getWritableDatabase();
     }
-    public long inserir(HomemadeExp aluno){
+
+    public long insertCoffee(NewCoffee coffee){
         ContentValues values = new ContentValues();
-        values.put("coffeebean", aluno.getCoffeebean());
+        values.put("coffeebean", coffee.getCoffebean());
+
+
 //        values.put("cpf", aluno.getCpf());
 //        values.put("telefone", aluno.getTelefone());
         return banco.insert("registerhomemade", null, values);

@@ -9,15 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.cafe.homemade.DataHomemade;
+import com.example.cafe.homemade.DataNewCoffee;
 import com.example.cafe.homemade.HomemadeActivity;
-import com.example.cafe.homemade.HomemadeExp;
 
 public class NewActivity extends AppCompatActivity {
     DatabaseHelper db;
     EditText mTextGrao;
     Button mButtonRegister;
-    DataHomemade dataHomemade;
+    DataNewCoffee dataNewCoffee;
 
 
     @Override
@@ -48,12 +47,12 @@ public class NewActivity extends AppCompatActivity {
 
 
     }
-    public void cadastrar(View view){
-        HomemadeExp coffee = new HomemadeExp();
-        coffee.setCoffeebean(mTextGrao.getText().toString());
-//        a.setCpf(cpf.getText().toString());
-//        a.setTelefone(telefone.getText().toString());
-        long id = dataHomemade.inserir(coffee);
-        Toast.makeText(this, "Aluno inserido com id: " + id, Toast.LENGTH_SHORT).show();
-    }
+//    public void cadastrar(View view){
+//        HomemadeExp coffee = new HomemadeExp();
+//        coffee.setCoffeebean(mTextGrao.getText().toString());
+////        a.setCpf(cpf.getText().toString());
+////        a.setTelefone(telefone.getText().toString());
+//        long id = dataNewCoffee.inserir(coffee);
+//        Toast.makeText(this, "Aluno inserido com id: " + id, Toast.LENGTH_SHORT).show();
+//    }
 }
