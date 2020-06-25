@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cafe</string>
+    <string name="username">username</string>
+    <string name="password">senha</string>
+    <string name="login">LOGIN</string>
+    <string name="not_registered">Não cadastrado?</string>
+    <string name="register">CADASTRAR</string>
+    <string name="confirm_password">confirme senha</string>
+    <string name="already_registered">Já possui cadastrado?</string>
+    <string name="coffeTime">Hora do Café, </string>
+    <string name="coffeeBeanBitle">Grão de café</string>
+    <string name="coffeeBean">grão de cafe</string>
+</resources>
