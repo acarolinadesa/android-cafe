@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cafe.homemade.HomemadeActivity;
+
 public class HomeActivity extends AppCompatActivity {
     Button mButtonHomemade;
     Button mButtonCoffeeShop;
@@ -29,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         mButtonHomemade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(HomeActivity.this,HomemadeActivity.class);
+                Intent registerIntent = new Intent(HomeActivity.this, HomemadeActivity.class);
                 startActivity(registerIntent);
             }
         });

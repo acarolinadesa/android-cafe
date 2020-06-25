@@ -52,16 +52,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
-    public long addHomemade(String coffeebean){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("coffeebean", coffeebean);
-
-        // insert more itens
-        long res = db.insert("registerhomemade", null, contentValues);
-        db.close();
-        return res;
-    }
 
     // Listar HomemadeCoffee
 //    public List<HomemadeExp> getAll(){

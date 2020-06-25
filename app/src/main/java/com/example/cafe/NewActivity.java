@@ -9,10 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.cafe.homemade.DataHomemade;
+import com.example.cafe.homemade.HomemadeActivity;
+import com.example.cafe.homemade.HomemadeExp;
+
 public class NewActivity extends AppCompatActivity {
     DatabaseHelper db;
     EditText mTextGrao;
     Button mButtonRegister;
+    DataHomemade dataHomemade;
 
 
     @Override
@@ -37,22 +42,18 @@ public class NewActivity extends AppCompatActivity {
                    Toast.makeText(NewActivity.this, "Preenchimento incompleto", Toast.LENGTH_SHORT).show();
 
                 }
-//                if(pwd.equals(cnf_pwd) && pwd.length() !=0){
-//                    long val = db.addUser(user, pwd);
-//                    if(val > 0){
-//                        Toast.makeText(RegisterActivity.this, "You have registered", Toast.LENGTH_SHORT).show();
-//                        Intent moveToLogin  = new Intent(RegisterActivity.this, LoginActivity.class);
-//                        startActivity(moveToLogin);
-//                    }else if (val == 0){
-//                        Toast.makeText(RegisterActivity.this, "Registration error", Toast.LENGTH_SHORT).show();
-//                    }
-//                }else{
-//                    Toast.makeText(RegisterActivity.this, "Password is not matching", Toast.LENGTH_SHORT).show();
-//
-//                }
+
             }
         });
 
 
+    }
+    public void cadastrar(View view){
+        HomemadeExp coffee = new HomemadeExp();
+        coffee.setCoffeebean(mTextGrao.getText().toString());
+//        a.setCpf(cpf.getText().toString());
+//        a.setTelefone(telefone.getText().toString());
+        long id = dataHomemade.inserir(coffee);
+        Toast.makeText(this, "Aluno inserido com id: " + id, Toast.LENGTH_SHORT).show();
     }
 }

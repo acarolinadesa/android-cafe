@@ -56,29 +56,26 @@
         <ImageButton
             android:id="@+id/imageButtonHomemadeCoffee"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:background="#ffffff"
             app:srcCompat="@drawable/homemade_coffee48px" />
 
         <ImageButton
             android:id="@+id/imageButtonCoffeePlace"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:background="#ffffff"
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/coffeeplace48px"
-
             />
 
         <ImageButton
             android:id="@+id/imageButtonCoffeePlace2"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:background="#ffffff"
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/coffeeplace48px"
-
             />
-
     </LinearLayout>
 </LinearLayout>

@@ -1,6 +1,8 @@
-package com.example.cafe;
+package com.example.cafe.homemade;
 
-public class HomemadeExp {
+import java.io.Serializable;
+
+public class HomemadeExp implements Serializable {
     private Integer id;
     private String coffeebean;
 

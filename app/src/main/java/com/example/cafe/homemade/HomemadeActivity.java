@@ -1,26 +1,23 @@
-package com.example.cafe;
+package com.example.cafe.homemade;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.cafe.NewActivity;
+import com.example.cafe.R;
 
 public class HomemadeActivity extends AppCompatActivity {
     Button mButtonPlus;
 
-    ListView listview;
-    DatabaseHelper databaseHelper;
-    List<HomemadeExp> homemadeExp;
-    List<HomemadeExp> homemadeExpFilter = new ArrayList<>();
+//    ListView listview;
+//    DatabaseHelper databaseHelper;
+//    List<HomemadeExp> homemadeExp;
+//    List<HomemadeExp> homemadeExpFilter = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +42,7 @@ public class HomemadeActivity extends AppCompatActivity {
         mButtonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(HomemadeActivity.this,NewActivity.class);
+                Intent registerIntent = new Intent(HomemadeActivity.this, NewActivity.class);
                 startActivity(registerIntent);
             }
         });
