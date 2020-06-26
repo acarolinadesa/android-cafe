@@ -9,50 +9,59 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.cafe.homemade.DataNewCoffee;
-import com.example.cafe.homemade.HomemadeActivity;
-
 public class NewActivity extends AppCompatActivity {
     DatabaseHelper db;
-    EditText mTextGrao;
+    EditText mTextCoffeeBean;
     Button mButtonRegister;
-    DataNewCoffee dataNewCoffee;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
-
         db = new DatabaseHelper(this);
-        mTextGrao = (EditText) findViewById(R.id.edittext_graocafe);
+
+        mTextCoffeeBean = (EditText) findViewById(R.id.edittext_graocafe);
         mButtonRegister = (Button) findViewById(R.id.button_cadastrar);
-
-
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String coffeebean = mTextGrao.getText().toString().trim();
-                if(coffeebean.length()!=0) {
-                    Toast.makeText(NewActivity.this, "Experiência cadastrada", Toast.LENGTH_SHORT).show();
-                    Intent moveToHomemade = new Intent(NewActivity.this, HomemadeActivity.class);
-                    startActivity(moveToHomemade);
-                }else{
-                   Toast.makeText(NewActivity.this, "Preenchimento incompleto", Toast.LENGTH_SHORT).show();
+                String coffeebeans = mTextCoffeeBean.getText().toString().trim();
 
-                }
+                Toast.makeText(NewActivity.this, "Experiência salva", Toast.LENGTH_SHORT).show();
 
+                Intent homemadeIntent = new Intent(NewActivity.this,HomeActivity.class);
+                startActivity(homemadeIntent);
+
+
+
+//                boolean isInserted = db.addCoffee(mTextCoffeeBean.getText().toString()
+//                        //add more itens here
+//                );
+//                if(isInserted = true)
+//                    Toast.makeText(NewActivity.this, "Experience saved", Toast.LENGTH_LONG).show();
+//                else
+//                    Toast.makeText(NewActivity.this, "Error", Toast.LENGTH_SHORT).show();
+
+
+
+
+//                String user = mTextUsername.getText().toString().trim();
+//                String pwd = mTextPassword.getText().toString().trim();
+//                Boolean res = db.checkUser(user, pwd);
+//                if(res == true){
+//                    Toast.makeText(LoginActivity.this, "Successfuly Logged In", Toast.LENGTH_SHORT).show();
+//                    Intent homeIntent = new Intent(LoginActivity.this,HomeActivity.class);
+//                    //Send username to HomeActivity
+//                    mTextUsername = (EditText) findViewById(R.id.edittext_username);
+//                    String message = mTextUsername.getText().toString();
+//                    homeIntent.putExtra(EXTRA_MESSAGE, message);
+//                    startActivity(homeIntent);
+//
+//                }else{
+//                    Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
-
-
     }
-//    public void cadastrar(View view){
-//        HomemadeExp coffee = new HomemadeExp();
-//        coffee.setCoffeebean(mTextGrao.getText().toString());
-////        a.setCpf(cpf.getText().toString());
-////        a.setTelefone(telefone.getText().toString());
-//        long id = dataNewCoffee.inserir(coffee);
-//        Toast.makeText(this, "Aluno inserido com id: " + id, Toast.LENGTH_SHORT).show();
-//    }
 }
