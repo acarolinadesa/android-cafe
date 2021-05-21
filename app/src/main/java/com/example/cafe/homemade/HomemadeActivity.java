@@ -4,32 +4,40 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
+import com.example.cafe.DatabaseHelper;
 import com.example.cafe.NewActivity;
 import com.example.cafe.R;
 
-public class HomemadeActivity extends AppCompatActivity {
-    Button mButtonPlus;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
-//    ListView listview;
-//    DatabaseHelper databaseHelper;
-//    List<HomemadeExp> homemadeExp;
-//    List<HomemadeExp> homemadeExpFilter = new ArrayList<>();
+public class HomemadeActivity extends AppCompatActivity {
+
+    private ListView listView;
+    private DataHomemade data;
+    private List<HomemadeExp> homemade;
+    private List<HomemadeExp> homemadeFiltrados = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homemade);
 
-//        listview = findViewById(R.id.homemadeList);
-//        databaseHelper = new DatabaseHelper(this);
-//        homemadeExp = databaseHelper.getAll();
-//        homemadeExpFilter.addAll(homemadeExp);
-//        ArrayAdapter<DatabaseHelper> adapter = new ArrayAdapter<DatabaseHelper>(this, android.R.layout.simple_list_item_1);
-//        listview.setAdapter(adapter);
+        listView = findViewById(R.id.homemadeList);
+        data = new DataHomemade(this);
+        homemade = data.getAll();
+        homemadeFiltrados.addAll(homemade);
+        ArrayAdapter<HomemadeExp> adapter = new ArrayAdapter<HomemadeExp>(this, android.R.layout.simple_list_item_1, homemade);
+        listView.setAdapter(adapter);
 
 
 //        Intent intent = getIntent();
@@ -38,16 +46,11 @@ public class HomemadeActivity extends AppCompatActivity {
 //        TextView textView = findViewById(R.id.textView);
 //        textView.setText(message);
 
-        ImageButton mButtonPlus = (ImageButton) findViewById(R.id.imageButtonPlus);
-        mButtonPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent registerIntent = new Intent(HomemadeActivity.this, NewActivity.class);
-                startActivity(registerIntent);
-            }
-        });
-
-
-
     }
+
+//    public boolean onCreateOptionsMenu(Menu menu){
+//        MenuInflater i =  getMenuInflater();
+//        i.inflate(R.menu.menu_principal, menu);
+//        return true;
+//    }
 }

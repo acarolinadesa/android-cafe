@@ -8,22 +8,11 @@
     tools:context=".homemade.HomemadeActivity"
     android:background="#C0A03F">
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Teste"/>-->
-<!--    <ListView-->
-<!--        android:id="@+id/homemadeList"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="648dp"-->
-<!--        android:layout_margin="16dp" />-->
-
-    <ImageButton
-        android:id="@+id/imageButtonPlus"
+    <ListView
+        android:id="@+id/homemadeList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="16dp"
-        app:srcCompat="@drawable/plusp50px" />
+        android:layout_margin="16dp" />
+
 
 </LinearLayout>

@@ -14,30 +14,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME="register.db";
+    public static final String name ="register.db";
+    public static final int version = 1;
+
     public static final String TABLE_USER ="registeruser";
     public static final String COL_1 ="ID";
     public static final String COL_2 ="username";
     public static final String COL_3 ="password";
 
-    public static final String TABLE_HOMEMADE = "registerhomemade";
 
-    public DatabaseHelper(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, 1);
+    public DatabaseHelper(Context context) {
+        super(context, name, null, version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Create tables
         db.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)");
-        db.execSQL("CREATE TABLE registerhomemade (ID INTEGER PRIMARY KEY AUTOINCREMENT, coffeebean TEXT)");
+        db.execSQL("CREATE TABLE registercoffee (id INTEGER PRIMARY KEY AUTOINCREMENT, " + " coffeebean varchar(50))");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //Drop existing tables
         db.execSQL(" DROP TABLE IF EXISTS " + TABLE_USER );
-        db.execSQL(" DROP TABLE IF EXISTS " + TABLE_HOMEMADE);
+//        db.execSQL(" DROP TABLE IF EXISTS " + TABLE_HOMEMADE);
         onCreate(db);
     }
 
@@ -52,22 +53,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
-
-    // Listar HomemadeCoffee
-//    public List<HomemadeExp> getAll(){
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        List<HomemadeExp> homemadeExp = new ArrayList<>();
-//        Cursor cursor = db.query("registerhomemade", new String[]{"id","coffeebean"},
-//                null, null, null, null, null);
-//        while(cursor.moveToNext()){
-//            HomemadeExp homemade = new HomemadeExp();
-//            homemade.setId(cursor.getInt(0));
-//            homemade.setCoffeebean(cursor.getString(1));
-//
-//            homemadeExp.add(homemade);
-//        }
-//        return homemadeExp;
-//    }
 
 
     public boolean checkUser(String username, String password){
