@@ -67,12 +67,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"
-<<<<<<< HEAD
             android:onClick="register"/>
-=======
-            />
->>>>>>> 904fbaa6e2f33fcb2a6b91caed8fa0365ad7785d
-
-
-
 </LinearLayout>

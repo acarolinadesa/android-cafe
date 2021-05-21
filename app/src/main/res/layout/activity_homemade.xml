@@ -5,13 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
+    tools:context=".homemade.HomemadeActivity"
     android:background="#C0A03F">
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 904fbaa6e2f33fcb2a6b91caed8fa0365ad7785d
     <ListView
         android:id="@+id/homemadeList"
         android:layout_width="wrap_content"
